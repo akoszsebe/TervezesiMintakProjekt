@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.WeaponDecorator
 {
@@ -14,6 +12,11 @@ namespace Project.WeaponDecorator
         {
             Console.WriteLine("Supressor");
             base.Aim_And_Fire();
+        }
+
+        public override string GetName()
+        {
+            return base.GetName() + "SuppressorForWeapon;";
         }
     }
 }

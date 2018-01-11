@@ -1,18 +1,15 @@
-﻿using Project.SoldierBehaviors;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Project.Iterators;
 
 namespace Project.BattleFieldFactorys
 {
     class GermanBattleFieldFactory : BattleFieldFactory
     {
-        public override NatziArmy CreateNatziArmy(List<SoldierBehavior> soldiers)
+        public override NatziArmy CreateNatziArmy(MyCollection soldiers)
         {
             return new GermanArmy(soldiers);
         }
 
-        public override RedArmy CreateRedArmy(List<SoldierBehavior> soldiers)
+        public override RedArmy CreateRedArmy(MyCollection soldiers)
         {
             return new RussianArmy(soldiers);
         }

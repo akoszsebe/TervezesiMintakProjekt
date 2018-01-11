@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Project.WeaponDecorator
+﻿namespace Project.WeaponDecorator
 {
     public interface IWeapon
     {
         void Aim_And_Fire();
+
+        string GetName();
     }
 }

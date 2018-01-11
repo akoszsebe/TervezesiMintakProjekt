@@ -1,7 +1,4 @@
 ﻿using Project.WeaponDecorator;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.SoldierBehaviors
 {
@@ -16,6 +13,10 @@ namespace Project.SoldierBehaviors
             this.weapon = weapon; 
         }
 
-        public abstract void Attak(SoldierBehavior soldier);
+        public IWeapon GetWeapon() => weapon;
+
+        public string GetName() => this.GetType().Name + " -> health = "+ health;
+
+        public abstract void Attak(ref SoldierBehavior soldier,int multiplier);
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.WeaponDecorator
 {
@@ -15,7 +13,12 @@ namespace Project.WeaponDecorator
 
         public void Aim_And_Fire()
         {
-            Console.WriteLine(weaponType.ToString() +  "Aim and Fire");
+            Console.WriteLine(weaponType.ToString() +  " Aim and Fire");
+        }
+
+        public string GetName()
+        {
+            return weaponType.ToString();
         }
     }
 }

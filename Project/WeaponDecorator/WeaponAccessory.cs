@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Project.WeaponDecorator
+﻿namespace Project.WeaponDecorator
 {
     class WeaponAccessory : IWeapon
     {
@@ -16,6 +12,11 @@ namespace Project.WeaponDecorator
         public virtual void Aim_And_Fire()
         {
             weapon.Aim_And_Fire();
+        }
+
+        public virtual string GetName()
+        {
+            return weapon.GetName() + " accessory - ";
         }
     }
 }

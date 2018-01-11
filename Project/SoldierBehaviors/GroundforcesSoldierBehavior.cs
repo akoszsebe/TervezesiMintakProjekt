@@ -1,7 +1,4 @@
 ﻿using Project.WeaponDecorator;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.SoldierBehaviors
 {
@@ -10,9 +7,14 @@ namespace Project.SoldierBehaviors
         public GroundforcesSoldierBehavior(IWeapon weapon) : base(5,weapon)
         {
         }
-        public override void Attak(SoldierBehavior soldier)
+        public override void Attak(ref SoldierBehavior soldier,int multiplier)
         {
-            soldier.health -= 5;
+            soldier.health -= 5*multiplier;
+            if (soldier.health <= 0)
+            {
+                IWeapon tmpWeapon = soldier.GetWeapon();
+                soldier = new DeadSoldierBehavior(tmpWeapon);
+            };
         }
     }
 }

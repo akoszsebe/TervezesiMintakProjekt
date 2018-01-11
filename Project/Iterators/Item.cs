@@ -1,7 +1,4 @@
 ﻿using Project.SoldierBehaviors;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.Iterators
 {
@@ -17,7 +14,11 @@ namespace Project.Iterators
         public SoldierBehavior Soldier
         {
             get { return soldier; }
+            set { soldier = value; }
         }
+
+        public string GetDetails() => soldier.GetName() + " with " + soldier.GetWeapon().GetName();
+        
 
     }
 }

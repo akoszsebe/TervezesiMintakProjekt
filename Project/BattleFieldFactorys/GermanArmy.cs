@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Project.SoldierBehaviors;
+using Project.Iterators;
 
 namespace Project.BattleFieldFactorys
 {
     class GermanArmy : NatziArmy
     { 
-        public GermanArmy(List<SoldierBehavior> soldiers)
+        public GermanArmy(MyCollection soldiers)
         {
-            army = new List<SoldierBehavior>(soldiers);
+            army = soldiers;
         }
 
         public override void Outfights(RedArmy ra)
         {
-            Console.WriteLine(this.GetType().Name + " legyozi " + ra.GetType().Name);
+            Console.WriteLine(this.GetType().Name + " Outfights " + ra.GetType().Name);
         }
     }
 }

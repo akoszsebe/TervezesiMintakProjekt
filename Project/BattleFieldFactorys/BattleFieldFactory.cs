@@ -1,14 +1,11 @@
-﻿using Project.SoldierBehaviors;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Project.Iterators;
 
 namespace Project.BattleFieldFactorys
 {
     abstract class BattleFieldFactory
     {
-        public abstract NatziArmy CreateNatziArmy(List<SoldierBehavior> soldiers);
-        public abstract RedArmy CreateRedArmy(List<SoldierBehavior> soldiers);
+        public abstract NatziArmy CreateNatziArmy(MyCollection soldiers);
+        public abstract RedArmy CreateRedArmy(MyCollection soldiers);
 
     }
 }

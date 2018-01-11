@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Project.WeaponDecorator
+﻿namespace Project.WeaponDecorator
 {
     public enum EWeaponTypes
     {

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Project.WeaponDecorator
 {
-    class SideSaddlesForWeapon :WeaponAccessory
+    class SideSaddlesForWeapon : WeaponAccessory
     {
         public SideSaddlesForWeapon(IWeapon weapon) : base(weapon)
         {    
@@ -14,6 +12,11 @@ namespace Project.WeaponDecorator
         {
             Console.WriteLine("SideSaddles");
             base.Aim_And_Fire();
+        }
+
+        public override string GetName()
+        {
+            return base.GetName() + "SideSaddlesForWeapon;";
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Project.BattleFieldFactorys
 {
     class PolandBattleFieldFactory : BattleFieldFactory
     {
-        public override NatziArmy CreateNatziArmy(MyCollection soldiers)
+        public override NaziArmy CreateNaziArmy(MyCollection soldiers)
         {
             return new GermanArmy(soldiers);
         }

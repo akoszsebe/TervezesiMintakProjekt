@@ -9,7 +9,7 @@ namespace Project.BattleFieldFactorys
         {
             army = soldiers;
         }
-        public override void Outfights(NatziArmy na)
+        public override void Outfights(NaziArmy na)
         {
             Console.WriteLine(this.GetType().Name + " Outfights " + na.GetType().Name);
         }

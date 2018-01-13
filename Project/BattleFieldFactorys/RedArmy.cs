@@ -5,6 +5,6 @@ namespace Project.BattleFieldFactorys
     abstract class RedArmy
     {
         public MyCollection army { get; set; }
-        public abstract void Outfights(NatziArmy na);
+        public abstract void Outfights(NaziArmy na);
     }
 }

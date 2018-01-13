@@ -3,7 +3,7 @@ using Project.Iterators;
 
 namespace Project.BattleFieldFactorys
 {
-    class GermanArmy : NatziArmy
+    class GermanArmy : NaziArmy
     { 
         public GermanArmy(MyCollection soldiers)
         {

@@ -2,7 +2,7 @@
 
 namespace Project.BattleFieldFactorys
 {
-    abstract class NatziArmy
+    abstract class NaziArmy
     {
         public MyCollection army { get; set; }
         public abstract void Outfights(RedArmy ra);

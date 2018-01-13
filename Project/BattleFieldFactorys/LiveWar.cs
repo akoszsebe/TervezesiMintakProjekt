@@ -8,12 +8,12 @@ namespace Project.BattleFieldFactorys
 {
     class LiveWar
     {
-        private NatziArmy natziArmy;
+        private NaziArmy natziArmy;
         private RedArmy redArmy;
 
-        public LiveWar(BattleFieldFactory factory,MyCollection natziSoldiers, MyCollection redSoldiers)
+        public LiveWar(BattleFieldFactory factory,MyCollection naziSoldiers, MyCollection redSoldiers)
         {
-            natziArmy = factory.CreateNatziArmy(natziSoldiers);
+            natziArmy = factory.CreateNaziArmy(naziSoldiers);
             redArmy = factory.CreateRedArmy(redSoldiers);
         }
 

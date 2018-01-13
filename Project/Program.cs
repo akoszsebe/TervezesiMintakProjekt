@@ -21,13 +21,14 @@ namespace Project
             irak.stock.ForEach(x => { x.Aim_And_Fire(); });
 
             Console.WriteLine("  ----$$$--- ");
-            MyCollection natziSoldiers = new MyCollection();
-            natziSoldiers[0] = new Item(new AirforceSoldierBehavior(new BaseWeapon(EWeaponTypes.Submachine_gun)));
-            natziSoldiers[1] = new Item(new GroundforcesSoldierBehavior(new SuppressorForWeapon(new SuppressorForWeapon(new BaseWeapon(EWeaponTypes.Marksman)))));
-            natziSoldiers[2] = new Item(new GroundforcesSoldierBehavior(new SideSaddlesForWeapon(new BaseWeapon(EWeaponTypes.Shotgun))));
+            MyCollection naziSoldiers = new MyCollection();
+            naziSoldiers[0] = new Item(new AirforceSoldierBehavior(new BaseWeapon(EWeaponTypes.Submachine_gun)));
+            naziSoldiers[1] = new Item(new AirforceSoldierBehavior(new SideSaddlesForWeapon(new SuppressorForWeapon(new BaseWeapon(EWeaponTypes.Marksman)))));
+            naziSoldiers[2] = new Item(new NavyforceSoldierBehavior(new SideSaddlesForWeapon(new BaseWeapon(EWeaponTypes.Shotgun))));
+            naziSoldiers[3] = new Item(new AirforceSoldierBehavior(new SideSaddlesForWeapon(new BaseWeapon(EWeaponTypes.Shotgun))));
 
-            Console.WriteLine("     Iterating over NatziSoldiers:");
-            Printer.Print(natziSoldiers);
+            Console.WriteLine("     Iterating over NaziSoldiers:");
+            Printer.Print(naziSoldiers);
 
             MyCollection redSoldiers = new MyCollection();
             redSoldiers[0] = new Item(new GroundforcesSoldierBehavior(new BaseWeapon(EWeaponTypes.Marksman)));
@@ -38,13 +39,14 @@ namespace Project
             Console.WriteLine("     Iterating over RedSoldiers:");
             Printer.Print(redSoldiers);
 
-            Console.WriteLine("-------------- Start War ------------------");
+            Console.WriteLine("-------------- Start Fight ------------------");
+
             BattleFieldFactory germany = new GermanBattleFieldFactory();
-            LiveWar war = new LiveWar(germany,natziSoldiers,redSoldiers);
+            LiveWar war = new LiveWar(germany,naziSoldiers,redSoldiers);
             war.StartWar(new GroundFightLogicStrategy());
 
-            Console.WriteLine("     Iterating over NatziSoldiers After War");
-            Printer.Print(natziSoldiers);
+            Console.WriteLine("     Iterating over NaziSoldiers After War");
+            Printer.Print(naziSoldiers);
 
             Console.WriteLine("     Iterating over RedSoldiers  After War");
             Printer.Print(redSoldiers);

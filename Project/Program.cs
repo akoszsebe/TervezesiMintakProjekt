@@ -41,15 +41,21 @@ namespace Project
 
             Console.WriteLine("-------------- Start Fight ------------------");
 
-            BattleFieldFactory germany = new GermanBattleFieldFactory();
-            LiveWar war = new LiveWar(germany,naziSoldiers,redSoldiers);
+            BattleFieldFactory battleField = new PolandBattleFieldFactory();
+            LiveWar war = new LiveWar(battleField,naziSoldiers,redSoldiers);
             war.StartWar(new GroundFightLogicStrategy());
 
             Console.WriteLine("     Iterating over NaziSoldiers After War");
             Printer.Print(naziSoldiers);
+            Console.WriteLine("Deads : " + Counter.DeadCounter(naziSoldiers));
+            Console.WriteLine("Lives : " + Counter.LiveCounter(naziSoldiers));
 
-            Console.WriteLine("     Iterating over RedSoldiers  After War");
+
+            Console.WriteLine("\n     Iterating over RedSoldiers  After War");
             Printer.Print(redSoldiers);
+            Console.WriteLine("Deads : " + Counter.DeadCounter(redSoldiers));
+            Console.WriteLine("Lives : " + Counter.LiveCounter(redSoldiers));
+
         }
     }
 }

@@ -8,21 +8,23 @@ namespace Project.BattleFieldFactorys
 {
     class LiveWar
     {
-        private NaziArmy natziArmy;
+        private NaziArmy naziArmy;
         private RedArmy redArmy;
 
         public LiveWar(BattleFieldFactory factory,MyCollection naziSoldiers, MyCollection redSoldiers)
         {
-            natziArmy = factory.CreateNaziArmy(naziSoldiers);
+            naziArmy = factory.CreateNaziArmy(naziSoldiers);
             redArmy = factory.CreateRedArmy(redSoldiers);
+            Console.WriteLine("- In Nazi army are : " + naziArmy.GetType().Name +" soldiers");
+            Console.WriteLine("- In Red  army are : " + redArmy.GetType().Name +" soldiers");
         }
 
         public void StartWar(IGameLogicStrategy gameLogicStrategy)
         {
-            Iterator nIterator = natziArmy.army.CreateIterator();
+            Iterator nIterator = naziArmy.army.CreateIterator();
             Iterator rIterator = redArmy.army.CreateIterator();
 
-            while (Counter.LiveCounter(natziArmy.army) > 1 && Counter.LiveCounter(redArmy.army) > 1) 
+            while (Counter.LiveCounter(naziArmy.army) > 1 && Counter.LiveCounter(redArmy.army) > 1) 
             {
                 Item nItem = nIterator.First();
                 Item rItem = rIterator.First();
@@ -41,15 +43,15 @@ namespace Project.BattleFieldFactorys
                     rItem = rIterator.Next();
                 }
             }
-            int natziLives = Counter.LiveCounter(natziArmy.army);
+            int natziLives = Counter.LiveCounter(naziArmy.army);
             int redLives = Counter.LiveCounter(redArmy.army);
 
             Console.WriteLine("-----------------------------");
 
             if (natziLives < redLives)
-                redArmy.Outfights(natziArmy);
+                redArmy.Outfights(naziArmy);
             else
-                natziArmy.Outfights(redArmy);
+                naziArmy.Outfights(redArmy);
                          
             Console.WriteLine("-----------------------------");
         }

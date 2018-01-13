@@ -6,12 +6,12 @@ namespace Project.BattleFieldFactorys
     {
         public override NaziArmy CreateNaziArmy(MyCollection soldiers)
         {
-            return new GermanArmy(soldiers);
+            return new HungarianArmy(soldiers);
         }
 
         public override RedArmy CreateRedArmy(MyCollection soldiers)
         {
-            return new RussianArmy(soldiers);
+            return new RomanianArmy(soldiers);
         }
     }
 }
